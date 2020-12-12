@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.examples.R;
+import com.example.examples.model.History;
 import com.example.examples.viewmodel.FragmentsProcessor;
+import com.example.examples.viewmodel.ProcessDB;
 
 
 public class FragmentSecond extends Fragment {
@@ -26,7 +28,7 @@ public class FragmentSecond extends Fragment {
     Button buttonPlus;
     Button buttonMinus;
     Button buttonUmn;
-    DBHelper dbHelper;
+
 
 
 
@@ -35,7 +37,7 @@ public class FragmentSecond extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        dbHelper=new DBHelper(getActivity());
+
 
 
 
@@ -91,11 +93,12 @@ public class FragmentSecond extends Fragment {
         Integer B=Integer.parseInt(objB.getText().toString());
 
         resultText=Integer.toString(FragmentsProcessor.getPlus(A,B));
-        SQLiteDatabase database=dbHelper.getWritableDatabase();
+
         ContentValues contentValues=new ContentValues();
-        contentValues.put(DBHelper.KEY_PROGRAMS,"2");
-        contentValues.put(DBHelper.KEY_RESULT,resultText);
-        database.insert(DBHelper.TABLE_RESULT,null,contentValues);
+        ProcessDB a=new ProcessDB(getActivity());
+        History historyDB = new History(2,resultText);
+        a.insert(historyDB);
+
         resText.setText(resultText);
         MainActivity parent = (MainActivity)getActivity();
         historyItem history=new historyItem("Результат 2 фрагмента:"+resultText);
@@ -106,11 +109,11 @@ public class FragmentSecond extends Fragment {
         Integer A=Integer.parseInt(objA.getText().toString());
         Integer B=Integer.parseInt(objB.getText().toString());
         resultText=Integer.toString(FragmentsProcessor.getMinus(A,B));
-        SQLiteDatabase database=dbHelper.getWritableDatabase();
+
         ContentValues contentValues=new ContentValues();
-        contentValues.put(DBHelper.KEY_PROGRAMS,"2");
-        contentValues.put(DBHelper.KEY_RESULT,resultText);
-        database.insert(DBHelper.TABLE_RESULT,null,contentValues);
+        ProcessDB a=new ProcessDB(getActivity());
+        History historyDB = new History(2,resultText);
+        a.insert(historyDB);
         resText.setText(resultText);
         MainActivity parent = (MainActivity)getActivity();
         historyItem history=new historyItem("Результат 2 фрагмента:"+resultText);
@@ -120,11 +123,11 @@ public class FragmentSecond extends Fragment {
         Integer A=Integer.parseInt(objA.getText().toString());
         Integer B=Integer.parseInt(objB.getText().toString());
         resultText=Integer.toString(FragmentsProcessor.getMult(A,B));
-        SQLiteDatabase database=dbHelper.getWritableDatabase();
+
         ContentValues contentValues=new ContentValues();
-        contentValues.put(DBHelper.KEY_PROGRAMS,"2");
-        contentValues.put(DBHelper.KEY_RESULT,resultText);
-        database.insert(DBHelper.TABLE_RESULT,null,contentValues);
+        ProcessDB a=new ProcessDB(getActivity());
+        History historyDB = new History(2,resultText);
+        a.insert(historyDB);
         resText.setText(resultText);
         MainActivity parent = (MainActivity)getActivity();
         historyItem history=new historyItem("Результат 2 фрагмента:"+resultText);

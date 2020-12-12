@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.example.examples.R;
 import com.example.examples.viewmodel.SomeService;
 
 import static android.app.PendingIntent.getActivity;

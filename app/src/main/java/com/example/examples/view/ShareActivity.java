@@ -1,10 +1,12 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.examples.R;
 
 public class ShareActivity extends AppCompatActivity {
 

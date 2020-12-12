@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,15 +8,11 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.examples.R;
 import com.example.examples.viewmodel.FileProcessor;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 
 public class ShowFile extends AppCompatActivity {
     private int STORAGE_PERMISSION_CODE=1;

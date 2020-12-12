@@ -12,10 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowDatabase"></activity>
-        <activity android:name=".ShowFile" />
-        <activity android:name=".SharedPreferencesActivity" />
-        <activity android:name=".ShareActivity">
+        <activity android:name=".view.ShowDatabase"></activity>
+        <activity android:name=".view.ShowFile" />
+        <activity android:name=".view.SharedPreferencesActivity" />
+        <activity android:name=".view.ShareActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -25,15 +25,15 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".BrowserActivity" />
-        <activity android:name=".ActivityService" />
+        <activity android:name=".view.BrowserActivity" />
+        <activity android:name=".view.ActivityService" />
 
         <service
             android:name=".viewmodel.SomeService"
             android:enabled="true" />
 
-        <activity android:name=".HistoryActivity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.HistoryActivity2" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

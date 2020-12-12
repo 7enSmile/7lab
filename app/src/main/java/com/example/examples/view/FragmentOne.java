@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.examples.R;
+import com.example.examples.model.History;
 import com.example.examples.viewmodel.FragmentsProcessor;
+import com.example.examples.viewmodel.ProcessDB;
 
 public class FragmentOne extends Fragment {
     private EditText objX1;
@@ -28,13 +30,13 @@ public class FragmentOne extends Fragment {
     public String resultText;
     private Button button;
     View view;
-    DBHelper dbHelper;
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dbHelper=new DBHelper(getActivity());
+
 
 
 
@@ -80,11 +82,11 @@ public class FragmentOne extends Fragment {
         Double y2=Double.parseDouble(objY1.getText().toString());
         Double res= FragmentsProcessor.getLength(x1,x2,y1,x2);
         resultText=Double.toString(res);
-        SQLiteDatabase database=dbHelper.getWritableDatabase();
-        ContentValues contentValues=new ContentValues();
-        contentValues.put(DBHelper.KEY_PROGRAMS,"1");
-        contentValues.put(DBHelper.KEY_RESULT,resultText);
-        database.insert(DBHelper.TABLE_RESULT,null,contentValues);
+        ProcessDB a=new ProcessDB(getActivity());
+        History history = new History(1,resultText);
+
+
+        a.insert(history);
         resText.setText(resultText);
         MainActivity parent = (MainActivity)getActivity();
 

@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

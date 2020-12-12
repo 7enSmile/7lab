@@ -1,6 +1,6 @@
 package com.example.examples.viewmodel;
 
-import com.example.examples.historyItem;
+import com.example.examples.view.historyItem;
 import com.example.examples.model.HistoryModel;
 
 import java.util.ArrayList;

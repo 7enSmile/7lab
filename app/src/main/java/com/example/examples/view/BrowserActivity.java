@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.examples.R;
 
 public class BrowserActivity extends AppCompatActivity {
     private EditText url;

@@ -1,30 +1,20 @@
 package com.example.examples.viewmodel;
 
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
 import static java.lang.Thread.sleep;
 
-import androidx.annotation.Nullable;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import com.example.examples.view.ActivityService;
 
-import com.example.examples.ActivityService;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class SomeService extends Service {

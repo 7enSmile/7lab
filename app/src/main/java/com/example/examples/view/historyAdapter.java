@@ -1,4 +1,4 @@
-package com.example.examples;
+package com.example.examples.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+
+import com.example.examples.R;
 
 import java.util.ArrayList;
 
